@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-haze-50 text-ink-900 antialiased;
+}
+
+::selection {
+  @apply bg-brand-300/60 text-ink-900;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f9fd;
+}
+::-webkit-scrollbar-thumb {
+  background: #84d2ff;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #48b9f8;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1200px] px-6;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn relative overflow-hidden bg-brand-600 text-white shadow-[0_10px_30px_-8px_rgba(13,143,214,0.5)] hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-[0_14px_40px_-8px_rgba(13,143,214,0.75)] active:translate-y-0 active:scale-[0.98];
+  }
+  /* Shine sweep across primary buttons on hover */
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -160%;
+    height: 100%;
+    width: 60%;
+    transform: skewX(-20deg);
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.45),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+  .btn-primary:hover::after {
+    left: 160%;
+  }
+  .btn-ghost {
+    @apply btn border border-ink-900/15 bg-white/70 text-ink-900 backdrop-blur hover:border-brand-300 hover:bg-white;
+  }
+  .btn-dark {
+    @apply btn bg-ink-900 text-white hover:-translate-y-0.5 hover:bg-ink-800;
+  }
+  .btn-light {
+    @apply btn bg-white text-brand-700 hover:-translate-y-0.5 hover:bg-haze-100;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700 backdrop-blur;
+  }
+  /* Frosted-glass card on light backgrounds */
+  .glass {
+    @apply rounded-3xl border border-white/80 bg-white/85 shadow-[0_20px_60px_-22px_rgba(13,143,214,0.2)] backdrop-blur-xl;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-br from-ink-900 via-ink-800 to-brand-700 bg-clip-text text-transparent;
+  }
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-brand-600 via-accent-400 to-brand-500 bg-clip-text text-transparent;
+  }
+  /* Animated (flowing) gradient text */
+  .text-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      #0d8fd6,
+      #22ccea,
+      #1ea7ec,
+      #0d8fd6
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+  /* Subtle film-grain / noise overlay (place as an absolute layer) */
+  .bg-noise {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  .divider-gradient {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(13, 143, 214, 0.3),
+      transparent
+    );
+  }
+  /* Plain white background with a barely-there cool tint */
+  .bg-mesh {
+    background-color: #ffffff;
+    background-image:
+      radial-gradient(at 12% 10%, rgba(30, 167, 236, 0.07) 0px, transparent 40%),
+      radial-gradient(at 88% 8%, rgba(34, 204, 234, 0.06) 0px, transparent 38%),
+      radial-gradient(at 80% 88%, rgba(30, 167, 236, 0.05) 0px, transparent 42%);
+  }
+  .bg-grid-faint {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(13, 143, 214, 0.06) 1px,
+      transparent 0
+    );
+    background-size: 32px 32px;
+  }
+  /* Glassy 3D sphere — translucent blue glass */
+  .glass-orb {
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 35%),
+      radial-gradient(circle at 70% 75%, rgba(13, 143, 214, 0.55), transparent 55%),
+      linear-gradient(150deg, rgba(132, 210, 255, 0.9), rgba(13, 143, 214, 0.72));
+    box-shadow:
+      inset 8px 10px 24px rgba(255, 255, 255, 0.6),
+      inset -12px -16px 36px rgba(11, 78, 114, 0.5),
+      0 30px 60px -18px rgba(13, 143, 214, 0.5);
+    backdrop-filter: blur(2px);
+  }
+  .glass-orb-pink {
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 35%),
+      radial-gradient(circle at 70% 75%, rgba(34, 204, 234, 0.5), transparent 55%),
+      linear-gradient(150deg, rgba(163, 238, 252, 0.9), rgba(6, 176, 212, 0.66));
+    box-shadow:
+      inset 8px 10px 24px rgba(255, 255, 255, 0.6),
+      inset -12px -16px 36px rgba(8, 100, 130, 0.5),
+      0 30px 60px -18px rgba(34, 204, 234, 0.45);
+    backdrop-filter: blur(2px);
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+  /* Animated gradient border that fades in on hover (add to a .group parent
+     or use directly with :hover). The element must have a border-radius. */
+  .glow-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(
+      135deg,
+      rgba(13, 143, 214, 0.7),
+      rgba(34, 204, 234, 0.35),
+      transparent 65%
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .group:hover .glow-border::after,
+  .glow-border:hover::after {
+    opacity: 1;
+  }
+}
