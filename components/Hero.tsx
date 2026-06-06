@@ -36,7 +36,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <h1 className="mt-6 font-display text-5xl font-bold leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.25rem]">
+          <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.25rem]">
             <SplitText
               text="We build digital"
               className="block text-ink-900"

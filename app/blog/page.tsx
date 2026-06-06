@@ -17,7 +17,7 @@ export default function BlogPage() {
         <div className="container-x relative py-24 md:py-28">
           <Reveal>
             <span className="eyebrow">Blog & News</span>
-            <h1 className="mt-6 max-w-3xl font-display text-5xl font-bold tracking-tight md:text-6xl">
+            <h1 className="mt-6 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               <span className="text-gradient">Insights to help you</span>{" "}
               <span className="text-gradient-brand">grow faster.</span>
             </h1>

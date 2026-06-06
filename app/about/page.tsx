@@ -34,7 +34,7 @@ export default function AboutPage() {
               About us
             </span>
           </Reveal>
-          <h1 className="mx-auto mt-6 max-w-4xl font-display text-5xl font-bold leading-[1.04] tracking-tight md:text-7xl">
+          <h1 className="mx-auto mt-6 max-w-4xl font-display text-4xl font-bold leading-[1.06] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             <SplitText text="A team obsessed" className="block text-ink-900" delay={0.15} />
             <span className="block text-shimmer">with your growth.</span>
           </h1>

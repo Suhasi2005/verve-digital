@@ -71,7 +71,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}
     >
-      <body className="flex min-h-screen flex-col bg-haze-50 font-sans text-ink-900">
+      <body className="flex min-h-screen flex-col overflow-x-clip bg-haze-50 font-sans text-ink-900">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}

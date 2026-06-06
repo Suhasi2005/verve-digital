@@ -1,14 +1,29 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { businessPlans, type BusinessPlan } from "@/lib/content";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+// True on lg+ screens. Defaults to true so the desktop layout never flashes;
+// corrects to false on small screens after mount.
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(true);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return isDesktop;
+}
+
 export default function BusinessPipeline() {
   const [active, setActive] = useState(0);
+  const isDesktop = useIsDesktop();
 
   return (
     <div className="relative">
@@ -52,7 +67,8 @@ export default function BusinessPipeline() {
             plan={plan}
             index={i}
             active={active === i}
-            dimmed={active !== -1 && active !== i}
+            dimmed={isDesktop && active !== -1 && active !== i}
+            isDesktop={isDesktop}
             onActivate={() => setActive(i)}
           />
         ))}
@@ -66,12 +82,14 @@ function PipelineCard({
   index,
   active,
   dimmed,
+  isDesktop,
   onActivate,
 }: {
   plan: BusinessPlan;
   index: number;
   active: boolean;
   dimmed: boolean;
+  isDesktop: boolean;
   onActivate: () => void;
 }) {
   const outerRef = useRef<HTMLDivElement>(null);
@@ -99,7 +117,7 @@ function PipelineCard({
       animate={{
         opacity: inView ? 1 : 0,
         y: inView ? 0 : 30,
-        flexGrow: active ? 2.4 : 1,
+        flexGrow: isDesktop && active ? 2.4 : 1,
       }}
       transition={{
         opacity: { duration: 0.5, delay: inView ? index * 0.08 : 0, ease },
