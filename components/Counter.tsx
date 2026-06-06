@@ -16,7 +16,6 @@ export default function Counter({
   duration?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const startedRef = useRef(false);
   const inView = useInView(ref, { margin: "-40px" });
 
   // Parse once per `value` so identity is stable across renders.
@@ -40,10 +39,9 @@ export default function Counter({
       setDisplay(value);
       return;
     }
-    if (startedRef.current) return;
 
-    // Trigger when scrolled into view OR if it's already visible on mount
-    // (covers the case where the section is above the fold).
+    // Animate when scrolled into view OR already visible on mount. Re-runs
+    // whenever `value` changes (e.g. switching projects in the Work showcase).
     const el = ref.current;
     const visibleNow =
       !!el &&
@@ -52,9 +50,12 @@ export default function Counter({
         return r.top < window.innerHeight && r.bottom > 0;
       })();
 
-    if (!inView && !visibleNow) return;
+    if (!inView && !visibleNow) {
+      // Not in view yet — show the start value so it counts up later.
+      setDisplay(`${parsed.prefix}0${parsed.suffix}`);
+      return;
+    }
 
-    startedRef.current = true;
     const { prefix, target, suffix, decimals } = parsed;
     let raf = 0;
     let start: number | null = null;

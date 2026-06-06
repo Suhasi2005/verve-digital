@@ -340,6 +340,173 @@ export const projects: Project[] = [
   },
 ];
 
+// Extra detail shown on each case-study page (/work/[slug]), keyed by slug.
+export type CaseStudyDetail = {
+  industry: string;
+  duration: string;
+  approach: { title: string; description: string }[];
+  quote: { text: string; author: string; role: string };
+};
+
+export const caseStudyDetails: Record<string, CaseStudyDetail> = {
+  "northwind-coffee": {
+    industry: "DTC / Coffee",
+    duration: "5 months",
+    approach: [
+      {
+        title: "Rebuilt the paid funnel",
+        description:
+          "Restructured Meta and Google campaigns around first-time-subscriber intent, cutting wasted spend on broad audiences.",
+      },
+      {
+        title: "Launched a UGC engine",
+        description:
+          "Sourced and edited customer videos into a steady stream of scroll-stopping ads that beat studio creative 3:1.",
+      },
+      {
+        title: "Optimized the subscribe page",
+        description:
+          "A/B tested the offer, plan layout, and checkout to lift conversion without discounting the product.",
+      },
+    ],
+    quote: {
+      text: "We finally have a paid program that scales profitably. Subscriptions doubled and our cost per order dropped — it changed the business.",
+      author: "Sarah Chen",
+      role: "Founder, Northwind Coffee Co.",
+    },
+  },
+  "vertex-saas": {
+    industry: "B2B SaaS",
+    duration: "9 months",
+    approach: [
+      {
+        title: "Fixed the technical base",
+        description:
+          "Resolved crawl, speed, and indexation issues that were quietly capping every page's potential.",
+      },
+      {
+        title: "Built a content engine",
+        description:
+          "Mapped a pillar-and-cluster strategy around buyer questions and shipped depth-first content monthly.",
+      },
+      {
+        title: "Earned real authority",
+        description:
+          "Ran a digital-PR and linking program that put Vertex on page one for its highest-intent terms.",
+      },
+    ],
+    quote: {
+      text: "Within six months we went from invisible to ranking #1 for the keywords that matter most. Inbound is now our biggest channel.",
+      author: "Marcus Reid",
+      role: "VP Marketing, Vertex SaaS",
+    },
+  },
+  "lumiere-beauty": {
+    industry: "Beauty / Skincare",
+    duration: "3 months",
+    approach: [
+      {
+        title: "Built the brand identity",
+        description:
+          "Crafted a distinctive look, voice, and packaging system that stood out in a crowded beauty shelf.",
+      },
+      {
+        title: "Seeded the right creators",
+        description:
+          "Ran an influencer seeding program targeting micro-creators with genuinely engaged skincare audiences.",
+      },
+      {
+        title: "Coordinated the launch",
+        description:
+          "Synced email, organic, and paid into a single 72-hour launch moment that created real urgency.",
+      },
+    ],
+    quote: {
+      text: "Our launch sold out in three days. The creativity and the execution were beyond anything we expected.",
+      author: "Amara Okafor",
+      role: "CEO, Lumière Beauty",
+    },
+  },
+  "metro-fitness": {
+    industry: "Fitness / Local",
+    duration: "6 months",
+    approach: [
+      {
+        title: "Won local search",
+        description:
+          "Optimized every location's profile and pages so each gym ranked in its own neighborhood.",
+      },
+      {
+        title: "Geo-targeted the ads",
+        description:
+          "Ran radius-based campaigns with location-specific offers to drive walk-ins to the nearest club.",
+      },
+      {
+        title: "Turned members into marketers",
+        description:
+          "Launched a referral and social program that made existing members the growth channel.",
+      },
+    ],
+    quote: {
+      text: "Every location is profitable now, including the new ones. The local strategy filled our classes faster than we could have hoped.",
+      author: "Dana Whitfield",
+      role: "COO, Metro Fitness",
+    },
+  },
+  "atlas-travel": {
+    industry: "Travel",
+    duration: "7 months",
+    approach: [
+      {
+        title: "Rebranded for a new audience",
+        description:
+          "Repositioned Atlas for younger, online-first travelers with a fresh identity and tone.",
+      },
+      {
+        title: "Rebuilt the website",
+        description:
+          "Designed a fast, conversion-focused site with integrated booking and inspiring destination content.",
+      },
+      {
+        title: "Fueled it with content",
+        description:
+          "Published destination guides that pulled in organic traffic and warmed travelers toward booking.",
+      },
+    ],
+    quote: {
+      text: "The new brand and site finally feel like us — and the booking numbers prove our customers agree.",
+      author: "Priya Anand",
+      role: "Marketing Director, Atlas Travel",
+    },
+  },
+  "greenfield-foods": {
+    industry: "Food & Beverage",
+    duration: "10 months",
+    approach: [
+      {
+        title: "Built national awareness",
+        description:
+          "Layered SEO, paid, and social to introduce the brand to new markets beyond its home base.",
+      },
+      {
+        title: "Drove retail demand",
+        description:
+          "Created campaigns that sent shoppers looking for the product in store, supporting retail expansion.",
+      },
+      {
+        title: "Scaled email revenue",
+        description:
+          "Built lifecycle flows that turned first-time buyers into repeat, higher-value customers.",
+      },
+    ],
+    quote: {
+      text: "We went from a regional favorite to a brand people recognize nationwide. The retail doors opened because demand was already there.",
+      author: "Tomás Rivera",
+      role: "Founder, Greenfield Foods",
+    },
+  },
+};
+
 export const testimonials = [
   {
     quote:
@@ -358,6 +525,24 @@ export const testimonials = [
       "Our launch sold out in three days. The team's creativity and execution were beyond anything we expected.",
     name: "Amara Okafor",
     role: "CEO, Lumière Beauty",
+  },
+  {
+    quote:
+      "Every location is profitable now — even the new ones. They filled our classes faster than we thought possible.",
+    name: "Dana Whitfield",
+    role: "COO, Metro Fitness",
+  },
+  {
+    quote:
+      "They treated our budget like their own. Honest reporting, zero jargon, and bookings up triple digits.",
+    name: "Priya Anand",
+    role: "Marketing Director, Atlas Travel",
+  },
+  {
+    quote:
+      "We went from a regional name to a brand people recognize nationwide. The retail doors opened on their own.",
+    name: "Tomás Rivera",
+    role: "Founder, Greenfield Foods",
   },
 ];
 
