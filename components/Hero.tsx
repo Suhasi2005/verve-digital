@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="container-x relative grid items-center gap-12 py-20 md:py-28 lg:grid-cols-2">
+      <div className="container-x relative grid items-center gap-12 py-14 md:py-20 lg:grid-cols-2">
         {/* Left: copy */}
         <div>
           <motion.div

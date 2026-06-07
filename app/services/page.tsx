@@ -69,7 +69,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ---------------------------- Services grid ---------------------------- */}
-      <section className="relative overflow-hidden py-20 md:py-28">
+      <section className="relative overflow-hidden py-14 md:py-20">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[-6%] top-24 h-72 w-72 rounded-full bg-brand-200/25 blur-[120px]" />
           <div className="absolute bottom-10 right-[-4%] h-72 w-72 rounded-full bg-accent-200/25 blur-[120px]" />
@@ -102,52 +102,48 @@ export default function ServicesPage() {
       </section>
 
       {/* ------------------------------ Process ------------------------------ */}
-      <section className="border-y border-brand-100 bg-haze-50 py-20 md:py-28">
-        <div className="container-x">
-          <Reveal className="mx-auto max-w-2xl text-center">
+      <section className="border-y border-brand-100 bg-haze-50 py-14 md:py-20">
+        <div className="container-x grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+          {/* Sticky heading */}
+          <Reveal className="lg:sticky lg:top-28 lg:self-start">
             <span className="eyebrow">Our process</span>
             <AnimatedHeading
               as="h2"
               text="How an engagement works"
               className="mt-5 font-display text-4xl font-bold tracking-tight md:text-5xl"
             />
-            <p className="mt-4 text-ink-700/70">
+            <p className="mt-4 max-w-md text-ink-700/70">
               A proven, transparent process that turns your goals into compounding
-              results.
+              results — no black boxes, no surprises.
             </p>
+            <Magnetic className="mt-8">
+              <Link href="/contact" className="btn-primary">
+                Start your project →
+              </Link>
+            </Magnetic>
           </Reveal>
 
-          <div className="relative mt-16">
-            {/* connector strip with numbered nodes (desktop) */}
-            <div className="relative mb-[-24px] hidden md:block">
-              <div className="absolute left-[12.5%] right-[12.5%] top-1/2 h-0.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-brand-200 via-brand-400 to-accent-300" />
-              <div className="relative grid grid-cols-4">
-                {processSteps.map((step) => (
-                  <div key={step.step} className="flex justify-center">
-                    <span className="grid h-14 w-14 place-items-center rounded-full border-4 border-haze-50 bg-gradient-to-br from-brand-500 to-accent-400 font-display text-base font-bold text-white shadow-[0_0_22px_4px_rgba(13,143,214,0.35)]">
-                      {step.step}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* step cards */}
-            <div className="grid gap-6 md:grid-cols-4">
+          {/* Vertical numbered timeline */}
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute bottom-4 left-6 top-4 w-px bg-brand-200"
+            />
+            <div className="space-y-8">
               {processSteps.map((step, i) => (
-                <Reveal key={step.step} delay={i * 0.1}>
-                  <div className="group glow-border relative h-full overflow-hidden rounded-3xl border border-brand-100 bg-white p-7 text-center transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[0_34px_70px_-38px_rgba(13,143,214,0.55)] md:pt-12">
-                    <span className="pointer-events-none absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-brand-500 to-accent-400 transition-transform duration-300 group-hover:scale-x-100" />
-                    {/* mobile number badge */}
-                    <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-accent-400 font-display text-base font-bold text-white shadow-lg md:hidden">
+                <Reveal key={step.step} delay={i * 0.08}>
+                  <div className="group relative flex gap-5">
+                    <span className="relative z-10 grid h-12 w-12 flex-shrink-0 place-items-center rounded-full border border-brand-200 bg-white font-display font-bold text-brand-600 shadow-sm transition-colors duration-300 group-hover:border-transparent group-hover:bg-gradient-to-br group-hover:from-brand-500 group-hover:to-accent-400 group-hover:text-white">
                       {step.step}
                     </span>
-                    <h3 className="mt-4 font-display text-lg font-semibold md:mt-0">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-ink-700/70">
-                      {step.description}
-                    </p>
+                    <div className="flex-1 rounded-2xl border border-transparent px-1 pt-1.5 transition-colors duration-300 group-hover:border-brand-100 group-hover:bg-white group-hover:px-5 group-hover:py-4 group-hover:shadow-[0_18px_50px_-34px_rgba(13,143,214,0.5)]">
+                      <h3 className="font-display text-lg font-bold tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="mt-1.5 text-ink-700/70">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 </Reveal>
               ))}
@@ -157,7 +153,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ------------------------------- Stats ------------------------------- */}
-      <section className="py-20 md:py-24">
+      <section className="py-14 md:py-20">
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s, i) => (

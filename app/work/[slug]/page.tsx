@@ -51,7 +51,7 @@ export default async function CaseStudyPage({
         <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_10%,rgba(255,255,255,0.45),transparent_50%)]" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-haze-50 to-transparent" />
-        <div className="container-x relative py-20 md:py-28">
+        <div className="container-x relative py-14 md:py-20">
           <Link
             href="/work"
             className="text-sm font-medium text-white/90 transition hover:text-white"

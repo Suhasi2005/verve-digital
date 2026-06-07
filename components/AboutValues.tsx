@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { values } from "@/lib/content";
+import { valueIcon } from "@/components/icons";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-const icons = ["🎯", "🔍", "💡", "🤝"];
 
 /**
  * Editorial, interactive values list: big typography, hover a row to expand
@@ -38,13 +38,16 @@ export default function AboutValues() {
                 0{i + 1}
               </span>
               <span
-                className={`grid h-12 w-12 place-items-center rounded-2xl text-2xl ring-1 transition-all duration-300 ${
+                className={`grid h-12 w-12 flex-shrink-0 place-items-center rounded-2xl ring-1 transition-all duration-300 ${
                   isActive
-                    ? "bg-gradient-to-br from-brand-500 to-accent-400 ring-white/60"
-                    : "bg-haze-100 ring-brand-100 grayscale group-hover:grayscale-0"
+                    ? "bg-gradient-to-br from-brand-500 to-accent-400 text-white ring-white/60"
+                    : "bg-haze-100 text-brand-600 ring-brand-100"
                 }`}
               >
-                {icons[i % icons.length]}
+                {(() => {
+                  const Icon = valueIcon[i % valueIcon.length];
+                  return <Icon className="h-6 w-6" strokeWidth={1.75} />;
+                })()}
               </span>
               <h3
                 className={`flex-1 font-display text-2xl font-bold tracking-tight transition-all duration-300 md:text-3xl ${

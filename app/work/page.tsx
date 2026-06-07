@@ -62,7 +62,7 @@ export default function WorkPage() {
       </section>
 
       {/* --------------------------- Work showcase --------------------------- */}
-      <section className="relative overflow-hidden py-20 md:py-28">
+      <section className="relative overflow-hidden py-14 md:py-20">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[-6%] top-24 h-72 w-72 rounded-full bg-brand-200/25 blur-[120px]" />
           <div className="absolute bottom-10 right-[-4%] h-72 w-72 rounded-full bg-accent-200/25 blur-[120px]" />
@@ -84,7 +84,7 @@ export default function WorkPage() {
       </section>
 
       {/* ----------------------------- All projects ----------------------------- */}
-      <section className="border-y border-brand-100 bg-haze-50 py-20 md:py-28">
+      <section className="border-y border-brand-100 bg-haze-50 py-14 md:py-20">
         <div className="container-x">
           <Reveal className="mx-auto mb-14 max-w-2xl text-center">
             <span className="eyebrow">All work</span>
@@ -142,7 +142,7 @@ export default function WorkPage() {
       </section>
 
       {/* --------------------------- Industries --------------------------- */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-x grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <span className="eyebrow">Industries</span>
@@ -175,7 +175,7 @@ export default function WorkPage() {
       </section>
 
       {/* ------------------------------- Stats ------------------------------- */}
-      <section className="border-y border-brand-100 bg-haze-50 py-20 md:py-24">
+      <section className="border-y border-brand-100 bg-haze-50 py-14 md:py-20">
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s, i) => (

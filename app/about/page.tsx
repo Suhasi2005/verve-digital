@@ -49,7 +49,7 @@ export default function AboutPage() {
       </section>
 
       {/* ------------------------------ Story ------------------------------ */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal x={-40}>
             <span className="eyebrow">Our story</span>
@@ -122,7 +122,7 @@ export default function AboutPage() {
       </section>
 
       {/* ------------------------------ Values ------------------------------ */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-x">
           <Reveal className="mx-auto mb-12 max-w-2xl text-center">
             <span className="eyebrow">What we believe</span>
@@ -140,7 +140,7 @@ export default function AboutPage() {
       </section>
 
       {/* ------------------------------ Journey ------------------------------ */}
-      <section className="border-y border-brand-100 bg-haze-50 py-20 md:py-28">
+      <section className="border-y border-brand-100 bg-haze-50 py-14 md:py-20">
         <div className="container-x">
           <Reveal className="mx-auto mb-16 max-w-2xl text-center">
             <span className="eyebrow">Our journey</span>
@@ -155,7 +155,7 @@ export default function AboutPage() {
       </section>
 
       {/* ------------------------------- Team ------------------------------- */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-x">
           <Reveal className="mx-auto mb-14 max-w-2xl text-center">
             <span className="eyebrow">The people</span>

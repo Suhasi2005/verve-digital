@@ -18,7 +18,7 @@ export default function ContactPage() {
           variant="pink"
           className="absolute -right-8 top-12 hidden h-36 w-36 animate-float md:block"
         />
-        <div className="container-x relative py-24 md:py-28">
+        <div className="container-x relative py-14 md:py-20">
           <Reveal>
             <span className="eyebrow">Contact</span>
             <h1 className="mt-6 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">

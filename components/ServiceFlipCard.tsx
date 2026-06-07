@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { Service } from "@/lib/content";
+import { serviceIcon } from "@/components/icons";
+import { Search } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -21,6 +23,7 @@ export default function ServiceFlipCard({
   const [hovered, setHovered] = useState(false);
   const [flipped, setFlipped] = useState(false);
   const show = hovered || flipped;
+  const Icon = serviceIcon[service.slug] ?? Search;
 
   const faceBase =
     "absolute inset-0 flex flex-col rounded-3xl p-8 [backface-visibility:hidden] [-webkit-backface-visibility:hidden]";
@@ -44,8 +47,8 @@ export default function ServiceFlipCard({
           <span className="pointer-events-none absolute inset-x-0 top-0 h-1 origin-left scale-x-0 rounded-t-3xl bg-gradient-to-r from-brand-500 to-accent-400 transition-transform duration-300 group-hover:scale-x-100" />
 
           <div className="flex items-center justify-between">
-            <span className="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-brand-100 to-accent-100 text-3xl ring-1 ring-white/60 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
-              {service.icon}
+            <span className="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-accent-400 text-white ring-1 ring-white/60 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+              <Icon className="h-7 w-7" strokeWidth={1.75} />
             </span>
             <span className="font-display text-sm font-bold text-ink-900/20">
               0{index + 1}

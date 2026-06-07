@@ -38,7 +38,7 @@ export default function TermsPage() {
     <>
       <section className="relative overflow-hidden bg-mesh">
         <div className="absolute inset-0 bg-grid-faint opacity-50" />
-        <div className="container-x relative py-20 md:py-24">
+        <div className="container-x relative py-14 md:py-20">
           <span className="eyebrow">Legal</span>
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl">
             Terms of Service

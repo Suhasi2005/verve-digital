@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { businessPlans, type BusinessPlan } from "@/lib/content";
+import { planIcon } from "@/components/icons";
+import { TrendingUp } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -185,8 +187,11 @@ function PipelineCard({
         </AnimatePresence>
 
         <div className="relative flex items-center justify-between">
-          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-100 to-accent-100 text-2xl ring-1 ring-white/60">
-            {plan.icon}
+          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-accent-400 text-white ring-1 ring-white/60">
+            {(() => {
+              const Icon = planIcon[plan.title] ?? TrendingUp;
+              return <Icon className="h-6 w-6" strokeWidth={1.75} />;
+            })()}
           </span>
         </div>
 

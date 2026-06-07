@@ -11,6 +11,8 @@ import {
 } from "framer-motion";
 import { services } from "@/lib/content";
 import SmartImage from "@/components/SmartImage";
+import { serviceIcon } from "@/components/icons";
+import { Search } from "lucide-react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -47,7 +49,7 @@ export default function ServicesShowcase() {
   }
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-14 md:py-20">
       <div className="container-x">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <span className="eyebrow">What we do</span>
@@ -159,7 +161,10 @@ export default function ServicesShowcase() {
                 {/* Description */}
                 <div className="relative mt-6">
                   <div className="flex items-center gap-2 text-sm font-semibold text-brand-600">
-                    <span className="text-lg">{current.icon}</span>
+                    {(() => {
+                      const Icon = serviceIcon[current.slug] ?? Search;
+                      return <Icon className="h-5 w-5" strokeWidth={1.75} />;
+                    })()}
                     {current.title}
                   </div>
                   <p className="mt-2 max-w-md text-sm text-ink-700/70">

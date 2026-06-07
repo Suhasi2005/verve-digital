@@ -42,7 +42,7 @@ export default function Home() {
       </section>
 
       {/* Statistics */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-x">
           <Reveal className="mx-auto mb-14 max-w-2xl text-center">
             <span className="eyebrow">By the numbers</span>
@@ -57,7 +57,7 @@ export default function Home() {
       </section>
 
       {/* Company Business Plans — ascending roadmap */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-x">
           <Reveal className="mx-auto max-w-3xl text-center">
             <span className="eyebrow">Company Business Plans</span>
@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials carousel */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-x">
           <Reveal className="mx-auto mb-14 max-w-2xl text-center">
             <span className="eyebrow">Testimonials</span>
@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* Latest blogs & news */}
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <Reveal className="max-w-2xl">
