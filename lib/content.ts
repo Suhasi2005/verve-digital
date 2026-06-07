@@ -666,10 +666,10 @@ export const industries = [
 ];
 
 export const team = [
-  { name: "Jordan Blake", role: "Founder & CEO", initials: "JB" },
-  { name: "Priya Nair", role: "Head of Strategy", initials: "PN" },
-  { name: "Diego Santos", role: "Creative Director", initials: "DS" },
-  { name: "Mei Tanaka", role: "Head of Paid Media", initials: "MT" },
+  { name: "Aarav Mehta", role: "Founder & CEO", initials: "AM" },
+  { name: "Diya Sharma", role: "Head of Strategy", initials: "DS" },
+  { name: "Rohan Patel", role: "Creative Director", initials: "RP" },
+  { name: "Ishaan Verma", role: "Head of Paid Media", initials: "IV" },
 ];
 
 // Homepage "Latest Blogs & News" + /blog pages. Drop images in
