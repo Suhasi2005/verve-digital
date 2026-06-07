@@ -13,8 +13,8 @@ export const company = {
   description:
     "We're a full-service digital marketing agency helping brands grow through data-driven strategy, bold creative, and campaigns that actually convert.",
   email: "hello@vervedigital.com",
-  phone: "+1 (555) 012-3456",
-  address: "221 Market Street, Suite 400, San Francisco, CA",
+  phone: "+91 90999 01234",
+  address: "Near New Bus Stand, Sanala Road, Morbi, Gujarat 363641",
   socials: {
     instagram: "https://instagram.com",
     facebook: "https://facebook.com",
