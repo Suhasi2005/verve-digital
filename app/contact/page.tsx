@@ -77,6 +77,28 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* Live map */}
+      <section className="pb-16 md:pb-24">
+        <div className="container-x">
+          <Reveal>
+            <div className="overflow-hidden rounded-[2rem] border border-brand-100 shadow-[0_30px_70px_-40px_rgba(13,143,214,0.5)]">
+              <iframe
+                title={`Map showing ${company.name} office`}
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                  company.address
+                )}&z=14&output=embed`}
+                width="100%"
+                height="420"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="block w-full grayscale-[0.2]"
+                style={{ border: 0 }}
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }
