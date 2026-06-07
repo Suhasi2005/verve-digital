@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -22,6 +22,8 @@ export default function SplitText({
 }) {
   const words = text.split(" ");
   let charIndex = 0;
+  const reduce = useReducedMotion();
+  if (reduce) return <span className={className}>{text}</span>;
 
   return (
     <span className={className} aria-label={text}>

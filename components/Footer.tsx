@@ -67,9 +67,16 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs text-gray-500 sm:flex-row">
+        <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-gray-500 sm:flex-row">
           <p>© {company.name}. All rights reserved.</p>
-          <p>Built with Next.js + Tailwind CSS.</p>
+          <div className="flex items-center gap-5">
+            <Link href="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-white">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

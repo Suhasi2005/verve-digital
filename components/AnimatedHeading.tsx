@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ElementType } from "react";
 
 type Props = {
@@ -23,6 +23,8 @@ export default function AnimatedHeading({
   delay = 0,
 }: Props) {
   const words = text.split(" ");
+  const reduce = useReducedMotion();
+  if (reduce) return <Tag className={className}>{text}</Tag>;
 
   return (
     <Tag className={className}>

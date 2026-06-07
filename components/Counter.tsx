@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useInView, useReducedMotion } from "framer-motion";
 
 /**
  * Animated number that counts up from 0 to the target when it enters view.
@@ -17,6 +17,7 @@ export default function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { margin: "-40px" });
+  const reduce = useReducedMotion();
 
   // Parse once per `value` so identity is stable across renders.
   const parsed = useMemo(() => {
@@ -35,7 +36,8 @@ export default function Counter({
   );
 
   useEffect(() => {
-    if (!parsed) {
+    if (!parsed || reduce) {
+      // No parse match, or user prefers reduced motion — show final value.
       setDisplay(value);
       return;
     }
@@ -68,7 +70,7 @@ export default function Counter({
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [inView, parsed, value, duration]);
+  }, [inView, parsed, value, duration, reduce]);
 
   return <span ref={ref}>{display}</span>;
 }

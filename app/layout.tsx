@@ -8,6 +8,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CursorGlow from "@/components/CursorGlow";
 import PageBackground from "@/components/PageBackground";
 import BackToTop from "@/components/BackToTop";
+import Analytics from "@/components/Analytics";
 import { company } from "@/lib/content";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -40,11 +41,15 @@ export const metadata: Metadata = {
     description: company.description,
     url: company.url,
     locale: "en_US",
+    images: [
+      { url: "/og.png", width: 1200, height: 630, alt: company.name },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${company.name} — ${company.tagline}`,
     description: company.description,
+    images: ["/og.png"],
   },
   robots: { index: true, follow: true },
 };
@@ -86,6 +91,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <BackToTop />
+        <Analytics />
       </body>
     </html>
   );
