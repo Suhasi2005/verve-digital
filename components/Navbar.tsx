@@ -42,9 +42,12 @@ export default function Navbar() {
           href="/"
           className="group flex items-center gap-2.5 font-display text-lg font-bold"
         >
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-white shadow-lg shadow-brand-500/30 transition group-hover:scale-105 group-hover:rotate-6">
-            {company.name.charAt(0)}
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo-mark.png"
+            alt=""
+            className="h-9 w-9 object-contain transition group-hover:scale-105 group-hover:-rotate-3"
+          />
           {company.name}
         </Link>
 

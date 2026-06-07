@@ -9,9 +9,12 @@ export default function Footer() {
       <div className="container-x grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 font-display text-lg font-bold text-white">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-white">
-              {company.name.charAt(0)}
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo-mark.png"
+              alt=""
+              className="h-9 w-9 object-contain"
+            />
             {company.name}
           </div>
           <p className="mt-4 max-w-xs text-sm text-gray-400">
